@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles.css";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([
@@ -18,19 +19,19 @@ const Blog = () => {
   ]);
 
   return (
-    <>
+    <div className="main">
       <h1>The Gayatri's Blog Lisitng</h1>
       <h2>Start editing to see some magic happen!</h2>
 
       {blogs &&
         blogs.map((item, index) => (
-          <div key={index}>
-            console.log(item)
-            <h5>{item.title}</h5>
+          <div className="blog" key={index}>
+            {console.log(item)}
+            <h3>{item.title}</h3>
             <p>{item.body}</p>
           </div>
         ))}
-    </>
+    </div>
   );
 };
 
